@@ -170,4 +170,4 @@ function getRandomPosition() {
   }
   
   // Move target every 2 seconds
-  setInterval(moveTarget, 2000);
+  setInterval(moveTarget, 500);
