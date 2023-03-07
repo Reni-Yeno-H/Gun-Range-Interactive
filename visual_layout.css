@@ -90,7 +90,7 @@ nav li {
 	/*cursor: crosshair;  Set cursor to crosshair when hovering */
   }
   
-  .counter {
+  #counter {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -112,4 +112,3 @@ nav li {
 		height: 200px;
 	}
 }
-  
