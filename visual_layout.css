@@ -31,34 +31,6 @@ nav li {
 	display: inline
 }
 
-/*#BG {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 50px;
-	height: 50px;
-	background-image: url('Assets/BG.png');
-	background-size: cover;
-}
-
-#target {
-	position: absolute;
-	top: 50%;
-	left: -100px;
-	width: 50px;
-	height: 50px;
-	background-image: url('Assets/Target.png');
-	background-size: cover;
-	border-radius: 50%;
-	animation: move-target 2s linear infinite;
-}
-
-#interactive-section {
-	height: 100vh;
-	cursor: url('Assets/Crosshair.png') 25 25, auto;
-}*/
-
 .interactive-section {
 	position: relative;
 	width: 1400px;
@@ -93,6 +65,17 @@ nav li {
   #container {
 	position: relative;
 	height: 350px;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
   }
   
   #glock {
@@ -100,8 +83,19 @@ nav li {
 	height: 120px;
 	position: absolute;
 	bottom: 0px;
-        left: 50%;
-        transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
   }
 
   #counter {
@@ -112,6 +106,17 @@ nav li {
 	font-size: 2em;
 	color: #fff;
 	z-index: 2;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
   } 
 
   /* Responsive styles */
