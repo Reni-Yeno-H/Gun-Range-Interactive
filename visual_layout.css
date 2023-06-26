@@ -31,34 +31,6 @@ nav li {
 	display: inline
 }
 
-/*#BG {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 50px;
-	height: 50px;
-	background-image: url('Assets/BG.png');
-	background-size: cover;
-}
-
-#target {
-	position: absolute;
-	top: 50%;
-	left: -100px;
-	width: 50px;
-	height: 50px;
-	background-image: url('Assets/Target.png');
-	background-size: cover;
-	border-radius: 50%;
-	animation: move-target 2s linear infinite;
-}
-
-#interactive-section {
-	height: 100vh;
-	cursor: url('Assets/Crosshair.png') 25 25, auto;
-}*/
-
 .interactive-section {
 	position: relative;
 	width: 1400px;
@@ -122,22 +94,6 @@ nav li {
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
   }
-
-  #container {
-	position: relative;
-	height: 350px;
-	-webkit-touch-callout: none; /* Disable iOS touch callout */
-  	-webkit-user-select: none; /* Disable text selection on iOS */
-  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
-  	-moz-user-select: none; /* Disable text selection for Firefox */
-  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
-  	user-select: none; /* Disable text selection for other browsers */
-	
-	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
-	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
-	-moz-user-drag: none; /* Disable dragging on Firefox */
-	-o-user-drag: none; /* Disable dragging on Opera */
-  }
   
   #glock {
 	width: 90px;
@@ -178,7 +134,133 @@ nav li {
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  } 
+  }
+  
+  .container {
+	width: 100%;
+	max-width: 800px;
+	height: 350px;
+	position: relative;
+	overflow: hidden; /* <===  */
+	border-radius: 15px;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+  
+  .container {
+	width: 100%;
+	max-width: 800px;
+	height: 350px;
+	position: absolute;
+	transition: all 0.5s;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+  
+  .container img {
+	width: 100%;
+	height: 100%;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+  
+  .btn {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	border: none;
+	border-radius: 50%;
+	z-index: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	font-size: 18px;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+  .btn:active {
+	transform: scale(1.1);
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+  .btn-prev {
+	top: 45%;
+	left: 2%;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+  
+  .btn-next {
+	top: 45%;
+	right: 2%;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+
+
 
   /* Responsive styles */
 @media (max-width: 600px) {
