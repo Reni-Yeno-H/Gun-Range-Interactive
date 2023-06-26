@@ -9,8 +9,7 @@
 <head>
 
 	<title>Gun Range Interactive</title>
-
-    <meta charset="utf-8" />
+	<meta charset="utf-8" />
     <meta name="keywords" content="Game, Keyboard FPS Practice, Aim, Shooter, Guns, Target, Target practice" />
 	<link rel="stylesheet" type="text/css" href="visual_layout.css">
 </head>
@@ -26,16 +25,23 @@
 			</ul>
 		</nav>
 	</header>
+	
+	<!--<section id="interactive-section">
+		<div id="container">
+			<div id="BG"></div>
+			<div id="target"></div>
+		</div>
+	</section>-->
 
     <div class="interactive-section" ontouchstart>
         <div id="target" class="target"></div>
 		
 		<div class="container">
-			<img id="glock" src="Assets/Glock.png">
+			<img id="glock" class="gun" src="Assets/Glock.png">
 		</div>
 
 		<div class="container">
-			<img id="glock" src="Assets/Glock_Reverse.png">
+			<img id="uzi" class="gun" src="Assets/Glock_Reverse.png">
 		</div>
 
 		  <!-- Control buttons -->
@@ -43,8 +49,7 @@
 		  <button class="btn btn-prev"><</button>
         <div id="counter">0</div>
       </div>
-
-
+	
 	<footer>
         <p id="counter">&nbsp;</p>
         <p>&copy; 2023 Gun Range Interactive. All rights reserved.</p>
