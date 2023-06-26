@@ -13,6 +13,8 @@ const interactiveSection = document.querySelector('.interactive-section');
 const glockImg = document.getElementById('glock');
 let isImageChanged = false;
 
+const uziImg = document.getElementById('uzi');
+
 // target element
 const target = document.getElementById('target');
 
@@ -140,4 +142,47 @@ prevContainer.addEventListener("click", function () {
   containers.forEach((container, indx) => {
     container.style.transform = `translateX(${100 * (indx - curContainer)}%)`;
   });
+});
+
+// Below allows gun to follow cursor
+
+interactiveSection.addEventListener('mousemove', function(event) {
+  const rect = interactiveSection.getBoundingClientRect();
+  const x = event.clientX - rect.left - 240; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
+  const y = event.clientY - rect.top - 25; // Adjust the subtraction value as desired, higher means up, lower means go down
+
+  glockImg.style.left = `${x}px`;
+  glockImg.style.top = `${y}px`;
+});
+
+// Below controls whether or not gun follow cursor after pressing gun slider
+
+let isGlockActive = true;
+let currentIndex = 0;
+
+const nextButton = document.getElementsByClassName('btn btn-next');
+const prevButton = document.getElementsByClassName('btn btn-prev');
+
+nextButton.addEventListener('click', function() {
+  if (isGlockActive) {
+    glockImg.style.display = 'none';
+    uziImg.style.display = 'block';
+    isGlockActive = false;
+  } else {
+    glockImg.style.display = 'block';
+    uziImg.style.display = 'none';
+    isGlockActive = true;
+  }
+});
+
+prevButton.addEventListener('click', function() {
+  if (isGlockActive) {
+    glockImg.style.display = 'none';
+    uziImg.style.display = 'block';
+    isGlockActive = false;
+  } else {
+    glockImg.style.display = 'block';
+    uziImg.style.display = 'none';
+    isGlockActive = true;
+  }
 });
