@@ -94,6 +94,11 @@ nav li {
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
   }
+
+  .gun {
+	position: absolute;
+	pointer-events: none;
+  }
   
   #glock {
 	width: 90px;
@@ -102,6 +107,7 @@ nav li {
 	bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
+	pointer-events: none; /* Disable pointer events to prevent interference with the target */
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
   	-webkit-user-select: none; /* Disable text selection on iOS */
   	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
@@ -115,6 +121,27 @@ nav li {
 	-o-user-drag: none; /* Disable dragging on Opera */
   }
 
+	#uzi {
+		width: 90px;
+		height: 120px;
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		transform: translateX(-50%);
+		pointer-events: none; /* Disable pointer events to prevent interference with the target */
+		-webkit-touch-callout: none; /* Disable iOS touch callout */
+		  -webkit-user-select: none; /* Disable text selection on iOS */
+		  -khtml-user-select: none; /* Disable text selection for Konqueror browser */
+		  -moz-user-select: none; /* Disable text selection for Firefox */
+		  -ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+		  user-select: none; /* Disable text selection for other browsers */
+		
+		-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+		-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+		-moz-user-drag: none; /* Disable dragging on Firefox */
+		-o-user-drag: none; /* Disable dragging on Opera */
+  }
+
   #counter {
 	position: absolute;
 	bottom: 0;
@@ -123,26 +150,6 @@ nav li {
 	font-size: 2em;
 	color: #fff;
 	z-index: 2;
-	-webkit-touch-callout: none; /* Disable iOS touch callout */
-  	-webkit-user-select: none; /* Disable text selection on iOS */
-  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
-  	-moz-user-select: none; /* Disable text selection for Firefox */
-  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
-  	user-select: none; /* Disable text selection for other browsers */
-	
-	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
-	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
-	-moz-user-drag: none; /* Disable dragging on Firefox */
-	-o-user-drag: none; /* Disable dragging on Opera */
-  }
-  
-  .container {
-	width: 100%;
-	max-width: 800px;
-	height: 350px;
-	position: relative;
-	overflow: hidden; /* <===  */
-	border-radius: 15px;
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
   	-webkit-user-select: none; /* Disable text selection on iOS */
   	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
@@ -274,4 +281,3 @@ nav li {
 		height: 200px;
 	}
 }
-  
