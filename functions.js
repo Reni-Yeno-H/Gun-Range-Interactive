@@ -1,3 +1,4 @@
+"use strict";
 /*
     Gun Range Web Interactive
     Author: Hao Ren Yuan
@@ -89,3 +90,54 @@ spawnTarget();
     }, 50);
     }
   });
+
+//Below is for gun carousel slider selection
+
+// Select all container
+const containers = document.querySelectorAll(".container");
+
+// loop through container and set each containers translateX
+containers.forEach((container, indx) => {
+  container.style.transform = `translateX(${indx * 100}%)`;
+});
+
+// select next container button
+const nextContainer = document.querySelector(".btn-next");
+
+// current container counter
+let curContainer = 0;
+// maximum number of containers
+let maxContainer = containers.length - 1;
+
+// add event listener and navigation functionality
+nextContainer.addEventListener("click", function () {
+  // check if current container is the last and reset current container
+  if (curContainer === maxContainer) {
+    curContainer = 0;
+  } else {
+    curContainer++;
+  }
+
+  //   move container by -100%
+  containers.forEach((container, indx) => {
+    container.style.transform = `translateX(${100 * (indx - curContainer)}%)`;
+  });
+});
+
+// select next container button
+const prevContainer = document.querySelector(".btn-prev");
+
+// add event listener and navigation functionality
+prevContainer.addEventListener("click", function () {
+  // check if current container is the first and reset current container to last
+  if (curContainer === 0) {
+    curContainer = maxContainer;
+  } else {
+    curContainer--;
+  }
+
+  //   move container by 100%
+  containers.forEach((container, indx) => {
+    container.style.transform = `translateX(${100 * (indx - curContainer)}%)`;
+  });
+});
