@@ -31,7 +31,12 @@ nav li {
 	display: inline
 }
 
+/* Style for the main content area */
+
 .interactive-section {
+	margin-left: 200px; /* Ensure content is not covered by the sidebar */
+    padding: 20px;
+
 	position: relative;
 	width: 1400px;
 	height: 400px;
@@ -65,7 +70,6 @@ nav li {
 	background-image: url('Assets/Target.png');
 	background-size: cover;
 	cursor: pointer;
-	z-index: 1;
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
   	-webkit-user-select: none; /* Disable text selection on iOS */
   	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
@@ -267,7 +271,27 @@ nav li {
 	-o-user-drag: none; /* Disable dragging on Opera */
   }
 
+  .toggle-difficulty{
+	z-index: 3;
+	top: 10%;
+	left: 2%;
+  }
 
+  .button-container{
+	display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+	align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+	z-index: 2;
+	background-color: #ffffff;
+	height: auto;
+	top: 10%;
+  }
+
+  /* Styles for each button */
+  .button-container button {
+  margin-bottom: 10px; /* Add space between buttons vertically */
+  }
 
   /* Responsive styles */
 @media (max-width: 600px) {
@@ -281,3 +305,4 @@ nav li {
 		height: 200px;
 	}
 }
+  
