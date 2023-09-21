@@ -11,13 +11,13 @@ const interactiveSection = document.querySelector('.interactive-section');
 
 // glockImg element
 const glockImg = document.getElementById('glock');
+glockImg.style.zIndex = '2';
 let isImageChanged = false;
 
 const uziImg = document.getElementById('uzi');
 
 // target element
 const target = document.getElementById('target');
-
 // counter element
 const counter = document.getElementById('counter');
 
@@ -44,6 +44,7 @@ function spawnTarget() {
   target.style.top = randomY + 'px';
   target.style.left = randomX + 'px';
   target.style.display = 'block';
+  target.style.zIndex = '1';
 }
 
 // initialize target
@@ -70,9 +71,49 @@ spawnTarget();
   function getRandomPosition(max, min) {
     return Math.floor(Math.random() * (max - min) + min);
   }
+
+  // Add click event listener to the "Marathon" button
+  var marathonButton = document.getElementById('marathonButton');
+  marathonButton.addEventListener('click', function () {
+      // Move target every 2 seconds
+      setInterval(moveTarget, 500);
+      hideContainerAfterSetting();
+  });
+
+  // Function to hide the button container
+  function hideContainerAfterSetting() {
+    buttonContainer.style.display = 'none';
+  }
+
+  // Get references to the button and container elements
+  const toggleButton = document.querySelector('.toggle-difficulty');
+  const buttonContainer = document.querySelector('.button-container');
+
+  // Function to hide the button container when an element with class "interactive-section" is clicked
+  function hideButtonContainer() {
+    var x = document.getElementById("toggle-difficulty");
+      x.style.display = "none";
+  }
+
+  // Add click event listeners to all elements with class "interactive-section"
+  var interactive_section = document.querySelectorAll('.container');
+  interactive_section.forEach(function (interactive_section) {
+    interactive_section.addEventListener('click', hideButtonContainer);
+  });
+
+  // Add a click event listener to the toggle button
+  toggleButton.addEventListener('click', function () {
+    if (buttonContainer.style.display === 'none' || buttonContainer.style.display === '') {
+        buttonContainer.style.display = 'flex';
+    } else {
+        buttonContainer.style.display = 'none';
+    }
+  });
+
+
   
-  // Move target every 2 seconds
-  setInterval(moveTarget, 500);
+  // Move target every 4 seconds
+  setInterval(moveTarget, 1000);
 
   // Change weapon image into firing image when left clicked
   interactiveSection.addEventListener('click', function(event) {
@@ -150,7 +191,6 @@ interactiveSection.addEventListener('mousemove', function(event) {
   const rect = interactiveSection.getBoundingClientRect();
   const x = event.clientX - rect.left - 240; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
   const y = event.clientY - rect.top - 25; // Adjust the subtraction value as desired, higher means up, lower means go down
-
   glockImg.style.left = `${x}px`;
   glockImg.style.top = `${y}px`;
 });
