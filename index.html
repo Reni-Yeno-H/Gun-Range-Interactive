@@ -25,7 +25,7 @@
 			</ul>
 		</nav>
 	</header>
-	
+
     <div class="interactive-section" ontouchstart>
 
 		<div class="container">
@@ -45,13 +45,20 @@
 
 		<button class="btn toggle-difficulty">≡</button>
 		<div class="button-container" id="toggle-difficulty" style="display: none;">
+			<p id="speedCounter">Speed: 1000 ms</p>
 			<div>Difficulty Settings</div>
-			<button>Frozen</button>
-			<button>Snail</button>
-			<button>Jog</button>
-			<button id="marathonButton">Marathon</button>
-		</div>
-
+			<br>
+			<button id="snailButton">Snail Pace</button>
+			<button id="normalButton">Normal Pace</button>
+			<button id="marathonButton">Marathon Pace</button>
+			<div>_</div>
+			<br>
+			<div>Speed Control</div>
+			<br>
+			<button id="increaseSpeed">Faster [+]</button>
+			<button id="decreaseSpeed">Slower [ - ]</button>
+			<button id="freezeButton/unfreezeButton">Pause/Resume</button>
+		</div>		
       </div>
 
 	<footer>
