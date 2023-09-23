@@ -20,6 +20,8 @@ const uziImg = document.getElementById('uzi');
 const target = document.getElementById('target');
 // counter element
 const counter = document.getElementById('counter');
+// Get a reference to the speed counter element
+const speedCounter = document.getElementById('speedCounter');
 
 
 // target click handler
@@ -53,8 +55,8 @@ spawnTarget();
 
   // Move target randomly within interactive section
   function moveTarget() {
-    let randomX = getRandomPosition(interactiveSection.offsetWidth - target.offsetWidth - 20, 20);
-    let randomY = getRandomPosition(interactiveSection.offsetHeight - target.offsetHeight - 20, 20);
+    let randomX = getRandomPosition(interactiveSection.offsetWidth - target.offsetWidth - 20, -20); // max left ,min right to ensure it won't touch out of bounds
+    let randomY = getRandomPosition(interactiveSection.offsetHeight - target.offsetHeight - 20, 20); // max top,min botttom to ensure it won't touch out of bounds
   
     // Check if target is touching border
     if (randomX < 0 || randomX + target.offsetWidth > interactiveSection.offsetWidth || randomY < 0 || randomY + target.offsetHeight > interactiveSection.offsetHeight) {
@@ -72,22 +74,104 @@ spawnTarget();
     return Math.floor(Math.random() * (max - min) + min);
   }
 
-  // Add click event listener to the "Marathon" button
-  var marathonButton = document.getElementById('marathonButton');
-  marathonButton.addEventListener('click', function () {
-      // Move target every 2 seconds
-      setInterval(moveTarget, 500);
-      hideContainerAfterSetting();
-  });
+let intervalId; // Declare a variable to hold the interval ID
+let currentSpeed = 1000; // Initial speed (1 second)
+// Update the speed counter with the initial speed
+speedCounter.textContent = `Speed: ${currentSpeed} ms`;
+let isFrozen = false; // Initial frozen state
+
+const buttonContainer = document.querySelector('.button-container');
+
+// Function to set the interval with the current speed
+function setTargetInterval(newSpeed) {
+    currentSpeed = newSpeed;
+    speedCounter.textContent = `Speed: ${currentSpeed} ms`;
+    clearInterval(intervalId); // Clear any existing interval
+    if (!isFrozen) {
+      intervalId = setInterval(moveTarget, currentSpeed); // Set the interval with the current speed
+  }
+    //intervalId = setInterval(moveTarget, currentSpeed); // Set the interval with the current speed
+    hideContainerAfterSetting();
+}
+
+// Add click event listener to the "snailButton" button
+var snail = document.getElementById('snailButton');
+snail.addEventListener('click', function () {
+    currentSpeed = 4000; // Change to a slower speed (4 seconds)
+    const newSpeed = currentSpeed;
+    setTargetInterval(newSpeed); // Set the new interval
+    hideContainerAfterSetting();
+});
+
+// Add click event listener to the "normalButton" button
+var normal = document.getElementById('normalButton');
+normal.addEventListener('click', function () {
+    currentSpeed = 1000; // Change to a slower speed (4 seconds)
+    const newSpeed = currentSpeed;
+    setTargetInterval(newSpeed); // Set the new interval
+    hideContainerAfterSetting();
+});
+
+// Add click event listener to the "marathonButton" button
+var marathon = document.getElementById('marathonButton');
+marathon.addEventListener('click', function () {
+    currentSpeed = 500; // Change to a faster speed (1/2 seconds)
+    const newSpeed = currentSpeed;
+    setTargetInterval(newSpeed); // Set the new interval
+    hideContainerAfterSetting();
+});
+
+// Function to increase the speed
+function increaseSpeed() {
+  currentSpeed /= 2; // Halve the current speed
+  const newSpeed = currentSpeed;
+  setTargetInterval(newSpeed); // Set the new interval
+  //hideContainerAfterSetting();
+}
+
+// Add click event listener to the "increaseSpeed" button
+var increaseSpeedButton = document.getElementById('increaseSpeed');
+increaseSpeedButton.addEventListener('click', increaseSpeed);
+
+// Function to decrease the speed
+function decreaseSpeed() {
+  currentSpeed *= 2; // Double the current speed
+  const newSpeed = currentSpeed;
+  setTargetInterval(newSpeed); // Set the new interval
+  //hideContainerAfterSetting();
+}
+
+// Add click event listener to the "decreaseSpeed" button
+var decreaseSpeedButton = document.getElementById('decreaseSpeed');
+decreaseSpeedButton.addEventListener('click', decreaseSpeed);
+
+function toggleFreeze() {
+  isFrozen = !isFrozen; // Toggle the state
+  if (isFrozen) {
+    clearInterval(intervalId); // Clear the interval to freeze the target
+    speedCounter.textContent = 'Speed: Frozen';
+  } else {
+    // Resume target movement with the current speed
+    intervalId = setInterval(moveTarget, currentSpeed);
+    speedCounter.textContent = `Speed: ${currentSpeed} ms`;
+  }
+}
+
+// Add click event listener to the "Freeze" button
+var freezeButton = document.getElementById('freezeButton/unfreezeButton');
+freezeButton.addEventListener('click', toggleFreeze);
+
+// Initial setup
+setTargetInterval(currentSpeed);
+  
+  // Get references to the button and container elements
+  const toggleButton = document.querySelector('.toggle-difficulty');
+  //const buttonContainer = document.querySelector('.button-container'); //Must be moved up(done) because things on top inherits this
 
   // Function to hide the button container
   function hideContainerAfterSetting() {
     buttonContainer.style.display = 'none';
   }
-
-  // Get references to the button and container elements
-  const toggleButton = document.querySelector('.toggle-difficulty');
-  const buttonContainer = document.querySelector('.button-container');
 
   // Function to hide the button container when an element with class "interactive-section" is clicked
   function hideButtonContainer() {
@@ -110,10 +194,6 @@ spawnTarget();
     }
   });
 
-
-  
-  // Move target every 4 seconds
-  setInterval(moveTarget, 1000);
 
   // Change weapon image into firing image when left clicked
   interactiveSection.addEventListener('click', function(event) {
