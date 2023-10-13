@@ -546,4 +546,3 @@ for (let i = 0; i < prevButtons.length; i++) {
   // Move target every 2 seconds
   setInterval(moveTarget, 500);
 
-  */
