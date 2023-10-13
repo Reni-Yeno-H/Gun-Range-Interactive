@@ -25,12 +25,13 @@
 			</ul>
 		</nav>
 	</header>
+	
+	<div class="interactive-section" id="touchTarget">
 
-    <div class="interactive-section" ontouchstart>
-
-		<div class="container">
+		<div class="container" id="imageContainer">
 			<img id="glock" class="gun" src="Assets/Glock.png">
 			<div id="target" class="target"></div>
+			<div id="target1" class="target1"></div>
 		</div>
 
 		<div class="container">
@@ -45,20 +46,41 @@
 
 		<button class="btn toggle-difficulty">≡</button>
 		<div class="button-container" id="toggle-difficulty" style="display: none;">
+			<div>Score: 
+				<span id="scoreCounter">0</span>
+			</div>
 			<p id="speedCounter">Speed: 1000 ms</p>
 			<div>Difficulty Settings</div>
 			<br>
 			<button id="snailButton">Snail Pace</button>
 			<button id="normalButton">Normal Pace</button>
 			<button id="marathonButton">Marathon Pace</button>
-			<div>_</div>
-			<br>
 			<div>Speed Control</div>
 			<br>
 			<button id="increaseSpeed">Faster [+]</button>
 			<button id="decreaseSpeed">Slower [ - ]</button>
 			<button id="freezeButton/unfreezeButton">Pause/Resume</button>
-		</div>		
+		</div>
+
+		<button class="btn civilian-difficulty">👥</button>
+		<div class="button-container1" id="civilian-difficulty" style="display: none;">
+			<button id="offButton/onButton">OFF/ON</button>
+			<div>Civilian Death(s): 
+			<span id="deathsCounter">0</span>
+			</div>
+			<p id="speedCounter1">Speed: 1000 ms</p>
+			<div>Civilian Settings</div>
+			<br>
+			<button id="snailButton1">Snail Pace</button>
+			<button id="normalButton1">Normal Pace</button>
+			<button id="marathonButton1">Marathon Pace</button>
+			<div>Speed Control</div>
+			<br>
+			<button id="increaseSpeed1">Faster [+]</button>
+			<button id="decreaseSpeed1">Slower [ - ]</button>
+			<button id="freezeButton/unfreezeButton1">Pause/Resume</button>
+		</div>
+		
       </div>
 
 	<footer>
