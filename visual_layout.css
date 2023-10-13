@@ -83,7 +83,27 @@ nav li {
 	-o-user-drag: none; /* Disable dragging on Opera */
   }
 
-  .target:hover {
+  .target1 {
+	position: absolute;
+	width: 75px;
+	height: 100px;
+	background-image: url('Assets/Civilian.png');
+	background-size: cover;
+	cursor: pointer;
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
+	
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+  }
+
+  .target:hover, .target1:hover {
 	cursor: url('Assets/Crosshair.png') 25 25, auto;
 	/*cursor: crosshair;  Set cursor to crosshair when hovering */
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
@@ -277,6 +297,12 @@ nav li {
 	left: 2%;
   }
 
+  .civilian-difficulty{
+	z-index: 3;
+	top: 20%;
+	left: 2%;
+  }
+
   .button-container{
 	display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items vertically */
@@ -286,12 +312,34 @@ nav li {
 	background-color: #ffffff;
 	height: auto;
 	top: 10%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+  }
+
+  .button-container1{
+	display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+	align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+	z-index: 2;
+	background-color: #ffffff;
+	height: auto;
+	top: 10%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
   }
 
   /* Styles for each button */
   .button-container button {
   margin-bottom: 10px; /* Add space between buttons vertically */
   }
+
+  /* Styles for each button */
+  .button-container1 button {
+	margin-bottom: 10px; /* Add space between buttons vertically */
+	}
 
   /* Responsive styles */
 @media (max-width: 600px) {
