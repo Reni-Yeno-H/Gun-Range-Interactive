@@ -200,7 +200,7 @@ nav li {
 #counter {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	width: 0;
 	text-align: center;
 	font-size: 2em;
 	color: #fff;
