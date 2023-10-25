@@ -502,16 +502,16 @@ interactiveSection.addEventListener('mousemove', function(event) {
   const rect = interactiveSection.getBoundingClientRect();
   let x = event.clientX - rect.right; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
   let y = event.clientY - rect.top; // Adjust the subtraction value as desired, higher means up, lower means go down
-  let i = event.clientX - rect.right + 1123;
-  let j = event.clientY - rect.top - 63;
-  if(x < 200) { //left side
+  let i = event.clientX - rect.right + 1443;
+  let j = event.clientY - rect.top - 13;
+  if(x < 605) { //left side
     flipImageHorizontally(glockImg);
-    x = event.clientX - rect.right + 920; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
+    x = event.clientX - rect.right + 1320; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
 
   }
-  if (x > 200) {
+  if (x > 605) { //right side
     restoreOriginalImage(glockImg);
-    x = event.clientX - rect.left - 240; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
+    x = event.clientX - rect.left + 10; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
 
   }
 
@@ -579,3 +579,54 @@ container.addEventListener('contextmenu', function(event) {
   // Prevent the default right-click context menu only within the container area
   event.preventDefault();
 });
+
+const counterContainer = document.getElementById('counter');
+counterContainer.addEventListener('contextmenu', function(event) {
+  // Prevent the default right-click context menu only within the container area
+  event.preventDefault();
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  let buttons = document.querySelectorAll(".toggle-button");
+
+  document.addEventListener("click", function(event) {
+      if (event.button === 1) { // Middle click (button 1)
+          buttons.forEach(function(button) {
+              button.style.display = button.style.display === "none" ? "block" : "none";
+          });
+      }
+  });
+});
+
+//Hide button function when mouse wheel is pressed:
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Add event listener to the document to listen for the mouse wheel click
+  document.addEventListener("mousedown", function (event) {
+    if (event.button === 1) { // Check if the middle mouse button is clicked (button value 1)
+      event.preventDefault();
+      toggleButtons();
+    }
+  });
+});
+
+function toggleButtons() {
+  const button1 = document.querySelector(".btn-next");
+  const button2 = document.querySelector(".btn-prev");
+  const button3 = document.querySelector(".toggle-difficulty");
+  const button4 = document.querySelector(".civilian-difficulty");
+
+  if (button1.style.display === "none") {
+    // If already hidden, display the buttons
+    button1.style.display = "block";
+    button2.style.display = "block";
+    button3.style.display = "block";
+    button4.style.display = "block";
+  } else {
+    // If visible, hide the buttons
+    button1.style.display = "none";
+    button2.style.display = "none";
+    button3.style.display = "none";
+    button4.style.display = "none";
+  }
+}
