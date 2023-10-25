@@ -105,7 +105,7 @@ target.addEventListener('click', function(event) {
     }
 
     isImageChanged = !isImageChanged;
-    
+
     // Revert back to the original image after 2 seconds (adjust the delay as needed)
     setTimeout(function() {
       glockImg.src = 'Assets/Glock.png';
@@ -126,7 +126,7 @@ target1.addEventListener('click', function(event) {
     }
 
     isImageChanged = !isImageChanged;
-    
+
     // Revert back to the original image after 2 seconds (adjust the delay as needed)
     setTimeout(function() {
       glockImg.src = 'Assets/Glock.png';
@@ -144,14 +144,14 @@ spawnTarget1();
   function moveTarget() {
     let randomX = getRandomPosition(interactiveSection.offsetWidth - target.offsetWidth - 20, -20); // max left ,min right to ensure it won't touch out of bounds
     let randomY = getRandomPosition(interactiveSection.offsetHeight - target.offsetHeight - 20, 20); // max top,min botttom to ensure it won't touch out of bounds
-  
+
     // Check if target is touching border
     if (randomX < 0 || randomX + target.offsetWidth > interactiveSection.offsetWidth || randomY < 0 || randomY + target.offsetHeight > interactiveSection.offsetHeight) {
       // Teleport target to center of interactive section
       randomX = (interactiveSection.offsetWidth - target.offsetWidth) / 2;
       randomY = (interactiveSection.offsetHeight - target.offsetHeight) / 2;
     }
-  
+
     target.style.top = randomY + 'px';
     target.style.left = randomX + 'px';
   }
@@ -159,18 +159,18 @@ spawnTarget1();
   function moveTarget1() {
     let randomX = getRandomPosition(interactiveSection1.offsetWidth - target1.offsetWidth - 20, -20); // max left ,min right to ensure it won't touch out of bounds
     let randomY = getRandomPosition(interactiveSection1.offsetHeight - target1.offsetHeight - 20, 20); // max top,min botttom to ensure it won't touch out of bounds
-  
+
     // Check if target is touching border
     if (randomX < 0 || randomX + target1.offsetWidth > interactiveSection1.offsetWidth || randomY < 0 || randomY + target1.offsetHeight > interactiveSection.offsetHeight) {
       // Teleport target to center of interactive section
       randomX = (interactiveSection1.offsetWidth - target1.offsetWidth) / 2;
       randomY = (interactiveSection1.offsetHeight - target1.offsetHeight) / 2;
     }
-  
+
     target1.style.top = randomY + 'px';
     target1.style.left = randomX + 'px';
   }
-  
+
   // Get random position within bounds
   function getRandomPosition(max, min) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -359,7 +359,7 @@ off_onButton.click();
 // Initial setup
 setTargetInterval(currentSpeed);
 setTargetInterval1(currentSpeed1);
-  
+
   // Get references to the button and container elements
   const toggleButton = document.querySelector('.toggle-difficulty');
   const toggleButton1 = document.querySelector('.civilian-difficulty');
@@ -414,7 +414,7 @@ setTargetInterval1(currentSpeed1);
       } else {
         glockImg.src = 'Assets/Glock_Shot.png'; // Replace with the path to the new image
       }
-    
+
       isImageChanged = !isImageChanged;
       // Revert back to the original image after 0.05 seconds (adjust the delay as needed) Ratio: 1000 = 1 second
       setTimeout(function() {
@@ -477,21 +477,51 @@ prevContainer.addEventListener("click", function () {
 
 // Below allows gun to follow cursor
 
+const aimed_glockImg = document.getElementById('aimed_glock');
+aimed_glockImg.style.zIndex = '2';
+let isRightMouseDown = false;
+
+interactiveSection.addEventListener('mousedown', function(event) {
+  if (event.button === 2) { // Right mouse button is clicked
+    glockImg.style.display = 'none';
+    isRightMouseDown = true;
+    aimed_glockImg.style.display = 'block'; // Show the image
+  }
+});
+
+interactiveSection.addEventListener('mouseup', function(event) {
+  if (event.button === 2) { // Right mouse button is released
+    glockImg.style.display = 'block';
+    isRightMouseDown = false;
+    aimed_glockImg.style.display = 'none'; // Hide the image
+  }
+});
+
 interactiveSection.addEventListener('mousemove', function(event) {
-  const mouseX = event.clientX - interactiveSection.getBoundingClientRect();
+  //const mouseX = event.clientX - interactiveSection.getBoundingClientRect();
   const rect = interactiveSection.getBoundingClientRect();
   let x = event.clientX - rect.right; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
   let y = event.clientY - rect.top; // Adjust the subtraction value as desired, higher means up, lower means go down
+  let i = event.clientX - rect.right + 1123;
+  let j = event.clientY - rect.top - 63;
   if(x < 200) { //left side
     flipImageHorizontally(glockImg);
     x = event.clientX - rect.right + 920; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
 
-  } 
+  }
   if (x > 200) {
     restoreOriginalImage(glockImg);
     x = event.clientX - rect.left - 240; // Adjust the subtraction value as desired, higher means gun go left, lower means gun go right
 
   }
+
+  if (isRightMouseDown) { // Only move the image if right mouse button is held
+    glockImg.style.display = 'none';
+    aimed_glockImg.style.display = 'block'; // Show the image while right-click is held
+  }
+
+  aimed_glockImg.style.left = `${i}px`;
+  aimed_glockImg.style.top = `${j}px`;
 
   glockImg.style.left = `${x}px`;
   glockImg.style.top = `${y}px`;
@@ -542,3 +572,10 @@ for (let i = 0; i < prevButtons.length; i++) {
     }
   });
 }
+
+//Disable right click menu options
+const container = document.getElementById('touchTarget');
+container.addEventListener('contextmenu', function(event) {
+  // Prevent the default right-click context menu only within the container area
+  event.preventDefault();
+});
