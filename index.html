@@ -25,11 +25,35 @@
 			</ul>
 		</nav>
 	</header>
-	
+	<h2>Directions:</h2>
+	<h3>
+		<img src="Assets/left-click.png"
+		width="20"
+		height="30"
+		alt="Left click to shoot"
+		title="Left click to shoot">
+		Left Click = Shoot
+		<br>
+		<img src="Assets/right-click.png"
+		width="20"
+		height="30"
+		alt="Right click to aim"
+		title="Right click to aim">
+		Right Click = Aim
+		<br>
+		<img src="Assets/middle-scroll.png"
+		width="20"
+		height="30"
+		alt="Mouse scroll to view"
+		title="Mouse scroll to view">
+		Mouse scroll = view
+	</h3>
+
 	<div class="interactive-section" id="touchTarget">
 
 		<div class="container" id="imageContainer">
 			<img id="glock" class="gun" src="Assets/Glock.png">
+			<img id="aimed_glock" class="gun" src="Assets/Aimed_Glock.png">
 			<div id="target" class="target"></div>
 			<div id="target1" class="target1"></div>
 		</div>
@@ -39,14 +63,14 @@
 		</div>
 
 		  <!-- Control buttons -->
-		  
+
 		  <button class="btn btn-next">></button>
 		  <button class="btn btn-prev"><</button>
         <div id="counter">0</div>
 
 		<button class="btn toggle-difficulty">≡</button>
 		<div class="button-container" id="toggle-difficulty" style="display: none;">
-			<div>Score: 
+			<div>Score:
 				<span id="scoreCounter">0</span>
 			</div>
 			<p id="speedCounter">Speed: 1000 ms</p>
@@ -65,7 +89,7 @@
 		<button class="btn civilian-difficulty">👥</button>
 		<div class="button-container1" id="civilian-difficulty" style="display: none;">
 			<button id="offButton/onButton">OFF/ON</button>
-			<div>Civilian Death(s): 
+			<div>Civilian Death(s):
 			<span id="deathsCounter">0</span>
 			</div>
 			<p id="speedCounter1">Speed: 1000 ms</p>
@@ -80,7 +104,7 @@
 			<button id="decreaseSpeed1">Slower [ - ]</button>
 			<button id="freezeButton/unfreezeButton1">Pause/Resume</button>
 		</div>
-		
+
       </div>
 
 	<footer>
