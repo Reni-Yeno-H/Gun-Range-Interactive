@@ -44,11 +44,13 @@
 		<img src="Assets/middle-scroll.png"
 		width="20"
 		height="30"
-		alt="Mouse scroll to view"
-		title="Mouse scroll to view">
-		Mouse scroll = view
+		alt="Mouse wheel click to hide/unhide buttons"
+		title="Mouse wheel click to hide/unhide buttons">
+		Mouse wheel click = hide/unhide buttons
 		<br>
 		Note: If target stays after click, count that as a miss.
+		<br>
+		If target is out of bounds, either resume (if paused) or wait until reenter.
 	</h3>
 
 	<div class="interactive-section" id="touchTarget">
@@ -107,10 +109,11 @@
 			<button id="freezeButton/unfreezeButton1">Pause/Resume</button>
 		</div>
 
+		<div id="counter">&nbsp;</div>
+
       </div>
 
 	<footer>
-        <p id="counter">&nbsp;</p>
         <p>&copy; 2023 Gun Range Interactive. All rights reserved.</p>
     </footer>
 
