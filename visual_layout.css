@@ -12,13 +12,22 @@ body {
 }
 
 header {
-	background-color: #222;
+	background-color: #444;
 	color: #fff;
 	padding: 20px;
 }
 
 h1 {
 	margin: 0;
+}
+
+h2 {
+	margin: 0;
+}
+
+h3 {
+	margin: 0;
+	text-align: center;
 }
 
 nav ul {
@@ -56,14 +65,14 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
+}
 
-  .target {
+.target {
 	position: absolute;
 	width: 50px;
 	height: 90px;
@@ -76,14 +85,14 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
+}
 
-  .target1 {
+.target1 {
 	position: absolute;
 	width: 75px;
 	height: 100px;
@@ -96,14 +105,14 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
+}
 
-  .target:hover, .target1:hover {
+.target:hover, .target1:hover {
 	cursor: url('Assets/Crosshair.png') 25 25, auto;
 	/*cursor: crosshair;  Set cursor to crosshair when hovering */
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
@@ -112,19 +121,19 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
+}
 
-  .gun {
+.gun {
 	position: absolute;
 	pointer-events: none;
-  }
-  
-  #glock {
+}
+
+#glock {
 	width: 90px;
 	height: 120px;
 	position: absolute;
@@ -138,35 +147,57 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
+}
 
-	#uzi {
-		width: 90px;
-		height: 120px;
-		position: absolute;
-		bottom: 0px;
-		left: 50%;
-		transform: translateX(-50%);
-		pointer-events: none; /* Disable pointer events to prevent interference with the target */
-		-webkit-touch-callout: none; /* Disable iOS touch callout */
-		  -webkit-user-select: none; /* Disable text selection on iOS */
-		  -khtml-user-select: none; /* Disable text selection for Konqueror browser */
-		  -moz-user-select: none; /* Disable text selection for Firefox */
-		  -ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
-		  user-select: none; /* Disable text selection for other browsers */
-		
-		-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
-		-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
-		-moz-user-drag: none; /* Disable dragging on Firefox */
-		-o-user-drag: none; /* Disable dragging on Opera */
-  }
+#aimed_glock {
+	display: none;
+	width: 70px;
+	height: 120px;
+	position: absolute;
+	bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+	pointer-events: none; /* Disable pointer events to prevent interference with the target */
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+  	-webkit-user-select: none; /* Disable text selection on iOS */
+  	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+  	-moz-user-select: none; /* Disable text selection for Firefox */
+  	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+  	user-select: none; /* Disable text selection for other browsers */
 
-  #counter {
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+}
+
+#uzi {
+	width: 90px;
+	height: 120px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none; /* Disable pointer events to prevent interference with the target */
+	-webkit-touch-callout: none; /* Disable iOS touch callout */
+	-webkit-user-select: none; /* Disable text selection on iOS */
+	-khtml-user-select: none; /* Disable text selection for Konqueror browser */
+	-moz-user-select: none; /* Disable text selection for Firefox */
+	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
+	user-select: none; /* Disable text selection for other browsers */
+
+	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
+	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
+	-moz-user-drag: none; /* Disable dragging on Firefox */
+	-o-user-drag: none; /* Disable dragging on Opera */
+}
+
+#counter {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -180,14 +211,14 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
-  
-  .container {
+}
+
+.container {
 	width: 100%;
 	max-width: 800px;
 	height: 350px;
@@ -199,14 +230,14 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
-  
-  .container img {
+}
+
+.container img {
 	width: 100%;
 	height: 100%;
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
@@ -215,14 +246,14 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
-  
-  .btn {
+}
+
+.btn {
 	position: absolute;
 	width: 40px;
 	height: 40px;
@@ -239,13 +270,13 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
-  .btn:active {
+}
+.btn:active {
 	transform: scale(1.1);
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
   	-webkit-user-select: none; /* Disable text selection on iOS */
@@ -253,13 +284,13 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
-  .btn-prev {
+}
+.btn-prev {
 	top: 45%;
 	left: 2%;
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
@@ -268,14 +299,14 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
-  
-  .btn-next {
+}
+
+.btn-next {
 	top: 45%;
 	right: 2%;
 	-webkit-touch-callout: none; /* Disable iOS touch callout */
@@ -284,26 +315,26 @@ nav li {
   	-moz-user-select: none; /* Disable text selection for Firefox */
   	-ms-user-select: none; /* Disable text selection for Internet Explorer/Edge */
   	user-select: none; /* Disable text selection for other browsers */
-	
+
 	-webkit-user-drag: none; /* Disable dragging on WebKit-based browsers */
 	-khtml-user-drag: none; /* Disable dragging on Konqueror browser */
 	-moz-user-drag: none; /* Disable dragging on Firefox */
 	-o-user-drag: none; /* Disable dragging on Opera */
-  }
+}
 
-  .toggle-difficulty{
+.toggle-difficulty{
 	z-index: 3;
 	top: 10%;
 	left: 2%;
-  }
+}
 
-  .civilian-difficulty{
+.civilian-difficulty{
 	z-index: 3;
 	top: 20%;
 	left: 2%;
-  }
+}
 
-  .button-container{
+.button-container{
 	display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items vertically */
 	align-items: center; /* Center-align items horizontally */
@@ -315,9 +346,9 @@ nav li {
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
-  }
+}
 
-  .button-container1{
+.button-container1{
 	display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items vertically */
 	align-items: center; /* Center-align items horizontally */
@@ -329,19 +360,19 @@ nav li {
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
-  }
+}
 
-  /* Styles for each button */
-  .button-container button {
+/* Styles for each button */
+.button-container button {
   margin-bottom: 10px; /* Add space between buttons vertically */
-  }
+}
 
-  /* Styles for each button */
-  .button-container1 button {
+/* Styles for each button */
+.button-container1 button {
 	margin-bottom: 10px; /* Add space between buttons vertically */
-	}
+}
 
-  /* Responsive styles */
+/* Responsive styles */
 @media (max-width: 600px) {
 	header h1 {
 		font-size: 24px;
@@ -353,4 +384,3 @@ nav li {
 		height: 200px;
 	}
 }
-  
